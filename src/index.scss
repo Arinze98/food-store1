@@ -1,0 +1,107 @@
+@import './color';
+@import './fonts';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $background_color;
+    @include p;
+
+    section{
+
+
+        div{
+            text-align: center;
+            text-transform: capitalize;
+            margin-top: 5rem;
+    
+            h1{
+                color: $secondary_color;
+                @include h1;
+            }
+        }
+    
+        .section-center{
+            width: 80vw;
+            margin: 1rem auto;
+            // background-color: blue;
+            display: grid;
+            gap: 1rem;
+
+            article{
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                
+                header{
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .btn{
+                        padding: .1rem .2rem;
+                        color: $secondary_color;
+                        font-size: .8rem;
+                    }
+                    h1{
+                        font-size: 1rem;
+                    }
+                
+                }
+                .content{
+                    // background-color: blue;
+                    padding: 1rem;
+                    margin: 0;
+
+                    img{
+                        width: 100%;
+                        height: 15rem;
+                        object-fit: cover;
+                        margin-top: .5rem;
+                        border-radius: .5rem;
+                    }
+                    h4{
+                        color: $primary_color;
+                    }
+                }
+            }
+        }
+        .container{
+            margin: 2rem auto;
+
+            .btn1{
+                width: 5.5rem;
+                height: 2rem;
+                border: none;
+                border-radius: .2rem;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                font-family: Arial;
+                text-transform: uppercase;
+                color: $secondary_color;
+                cursor: pointer;
+                transition: .3s all ease-in-out;
+            }
+            .btn1:hover{
+                color: white;
+                background-color: $secondary_color;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            .section-center{
+                width: 50vw;
+            }
+        }
+        @media (min-width: 1024px) {
+
+            .section-center{
+                width: 25vw;
+            }
+        }
+    }
+}

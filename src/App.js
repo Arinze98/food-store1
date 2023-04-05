@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import data from './data'
+import Food from './Food'
 
 function App() {
+  const [items, setItems] = useState(data)
+
+   const [questionEle, setQuestionEle] = useState(
+      items.map((item) => {
+      return <Food key={item.id} {...item} />
+    })
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <section>
+        <div>
+          <h1>food store</h1>
+          <div className='line'></div>
+        </div>
+
+        <div className='section-center'>{questionEle}</div>
+
+        <div className='container'>
+          <button className='btn1' onClick={() => setQuestionEle([])}>
+            clear
+          </button>
+        </div>
+      </section>
+    </>
+  )
 }
 
-export default App;
+export default App
